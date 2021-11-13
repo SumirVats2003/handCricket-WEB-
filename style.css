@@ -1,70 +1,95 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Odibee Sans', cursive, 'Times New Roman';
+  margin: 0;
+  padding: 0;
+  font-family: "Odibee Sans", cursive, "Times New Roman";
 }
 
 body {
-    background-color: rgb(63, 63, 63);
-    color: white
+  background-color: rgb(63, 63, 63);
+  color: white;
+}
+
+#winner {
+  position: absolute;
+  top: 45%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .numbers {
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: 1% 5%;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 1% 5%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main {
-    text-align: center;
-    font-size: 45px;
-    margin: 10px;
+  text-align: center;
+  font-size: 45px;
+  margin: 10px;
 }
 .numbers .main {
-    color: palegreen;
-} 
+  color: palegreen;
+}
 
 .number {
-    border: 2px solid white;
-    margin: 30px;
-    padding: 15px 23px;
-    font-size: 40px;
+  border: 2px solid white;
+  margin: 30px;
+  padding: 15px 23px;
+  font-size: 40px;
 }
 
 #player .number:hover {
-    background-color: grey;
+  background-color: grey;
 }
 
 .display {
-    border: 2px solid black;
-    margin: 5px 40% 5px 40%;
-    padding: 5px;
-    text-align: center;
-    font-size: 35px;
+  border: 2px solid black;
+  margin: 5px 40% 5px 40%;
+  padding: 5px;
+  text-align: center;
+  font-size: 35px;
 }
 
 .bttn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
-    text-align: center;
-    margin: 3px;
-    padding: 7px;
-    border: 2px solid;
-    color: rgb(29, 29, 29);
-    background-color: palegreen;
-    font-size: 20px;
+  text-align: center;
+  margin: 3px;
+  padding: 7px;
+  border: 2px solid;
+  color: rgb(29, 29, 29);
+  background-color: palegreen;
+  font-size: 20px;
 }
 
 .btn:hover {
-    background-color: rgb(117, 190, 117);
-    /* color: white; */
-    border: 2px solid rgb(29, 29, 29);
+  background-color: rgb(117, 190, 117);
+  border: 2px solid rgb(29, 29, 29);
+}
+
+.computer-choice {
+  margin: 5px 40% 5px 40%;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.player-choice {
+  margin: 5px 40% 5px 40%;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.5rem;
 }

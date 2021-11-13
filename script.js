@@ -1,56 +1,53 @@
-// document.getElementsByClassName("number").addEventListener("click", 
-// () => {
-//     let run = document.getElementById("number").innerText;
-//     document.getElementById("number").innerText
-// })
-
-// function display() {
-//     document.getElementById
-// }
+const player_numbers = document.querySelectorAll("#player .number");
+const ai_numbers = document.querySelectorAll("#ai .number");
+const winnerDiv = document.querySelector("#winner");
+const aiChoice = document.querySelector(".computer-choice");
+const playerChoice = document.querySelector(".player-choice");
+const playBtn = document.querySelector(".play-btn");
 
 // game variables
-let pruns;
-let cruns;
+let pruns = 0;
+let cruns = 0;
 let gameOver = false;
-let winner = 0; // 0 for tie, 1 for player, 2 for computer
 let run;
 
-function generateNumber() {
-    let num = Math.floor((Math.random() * 6) + 1);
-    document.getElementById("crun").innerText = num;
-}
-generateNumber();
+const generateNumber = () => {
+  let num = Math.floor(Math.random() * 6 + 1);
+  return num;
+};
 
-document.getElementsByClassName("btn").addEventListener("click", ()=> {
-    gameOver = true;
-}
-)
-
-// game loop
-while(!gameOver) {
-    if (run == num) {
-        gameOver = true;
-        break;
+for (let i = 0; i < player_numbers.length; i++) {
+  player_numbers[i].addEventListener("click", () => {
+    if (gameOver) return;
+    run = parseInt(player_numbers[i].innerText);
+    pruns += run;
+    document.getElementById("prun").innerText = pruns;
+    let num_generated = generateNumber();
+    cruns += num_generated;
+    const crun_div = document.querySelector(`#crun`);
+    crun_div.innerText = cruns;
+    playerChoice.innerText = "Player Choose: " + run;
+    aiChoice.innerText = "Computer Choose: " + num_generated;
+    if (run === num_generated) {
+      gameOver = true;
+      if (pruns > cruns) {
+        winner.innerText = "Player Wins";
+      } else if (pruns < cruns) {
+        winner.innerText = "Computer Wins";
+      } else {
+        winner = "Draw";
+      }
     }
-    
-    document.getElementsByClassName("1").addEventListener("click", ()=> {
-        run = 1;
-    })
-    document.getElementsByClassName("2").addEventListener("click", ()=> {
-        run = 2;
-    })
-    document.getElementsByClassName("3").addEventListener("click", ()=> {
-        run = 3;
-    })
-    document.getElementsByClassName("4").addEventListener("click", ()=> {
-        run = 4;
-    })
-    document.getElementsByClassName("5").addEventListener("click", ()=> {
-        run = 5;
-    })
-    document.getElementsByClassName("6").addEventListener("click", ()=> {
-        run = 6;
-    })
-    document.getElementById("prun").innerText = run
-    break;
+  });
 }
+
+playBtn.addEventListener("click", () => {
+  gameOver = false;
+  pruns = 0;
+  cruns = 0;
+  document.getElementById("prun").innerText = pruns;
+  document.getElementById("crun").innerText = cruns;
+  playerChoice.innerText = "";
+  aiChoice.innerText = "";
+  winnerDiv.innerText = "";
+});

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,13 +12,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
 </head>
+
 <body>
     <!-- Main window -->
     <div class="container">
         <h1 class="main">HAND CRICKET</h1>
         <!-- Player Window -->
         <div class="play" id="player">
-            
+
             <div class="numbers">
                 <h1 class="main">PLAYER</h1>
                 <div class="number 1">1</div>
@@ -31,11 +33,14 @@
                 0
             </div>
         </div>
+        <div id="winner"></div>
+        <p class="player-choice"></p>
         <!-- AI Window -->
         <div class="play" id="ai">
             <div class="display" id="crun">
                 0
             </div>
+            <p class="computer-choice"></p>
             <div class="numbers">
                 <div class="number 1">1</div>
                 <div class="number 2">2</div>
@@ -49,8 +54,9 @@
         </div>
     </div>
     <div class="bttn">
-        <button class="btn">PLAY AGAIN</button>
+        <button class="play-btn btn">PLAY AGAIN</button>
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>

@@ -20,14 +20,7 @@ for (let i = 0; i < player_numbers.length; i++) {
   player_numbers[i].addEventListener("click", () => {
     if (gameOver) return;
     run = parseInt(player_numbers[i].innerText);
-    pruns += run;
-    document.getElementById("prun").innerText = pruns;
     let num_generated = generateNumber();
-    cruns += num_generated;
-    const crun_div = document.querySelector(`#crun`);
-    crun_div.innerText = cruns;
-    playerChoice.innerText = "Player Choose: " + run;
-    aiChoice.innerText = "Computer Choose: " + num_generated;
     if (run === num_generated) {
       gameOver = true;
       if (pruns > cruns) {
@@ -37,7 +30,15 @@ for (let i = 0; i < player_numbers.length; i++) {
       } else {
         winner = "Draw";
       }
+      return
     }
+    pruns += run;
+    document.getElementById("prun").innerText = pruns;
+    cruns += num_generated;
+    const crun_div = document.querySelector(`#crun`);
+    crun_div.innerText = cruns;
+    playerChoice.innerText = "Player Choose: " + run;
+    aiChoice.innerText = "Computer Choose: " + num_generated;
   });
 }
 
